@@ -37,7 +37,7 @@ const doTheyAddUp = (list, k) => {
 	// end of attempt 2
 	// all tests pass with this method with 42:50 remaining -- time used in report
 	//does this pass the bonus???
-	//forEach is one pass and inluceds is another, this is N^2 and doesn't break as soon as true
+	//forEach is one pass and inluceds is another, this is O(N^2) and doesn't break as soon as true
 
 
 	//**** attempt 3 ****//
@@ -69,17 +69,17 @@ const doTheyAddUp = (list, k) => {
 
 
 	//**** attempt 5 ****// Best result
-	//copied from 4 and exit condition ammended
+	copied from 4 and exit condition ammended
 
-	// let answer = false;
-	// let index = 0;
-	// while(!answer && !(index == list.length)) { // change this to make the exit condition work
-	// 																						// now when index == list.length, rh => false, && => false
-	// 																						// or if answer => true, lh => false, && => false
-	// 	answer = list.includes(k - list[index]) || answer;
-	// 	index++;
-	// }
-	// return answer;
+	let answer = false;
+	let index = 0;
+	while(!answer && !(index == list.length)) { // change this to make the exit condition work
+																							// now when index == list.length, rh => false, && => false
+																							// or if answer => true, lh => false, && => false
+		answer = list.includes(k - list[index]) || answer;
+		index++;
+	}
+	return answer;
 
 	// end of attempt 5
 	// all tests pass, worst case complexity still the same as attempt 2
